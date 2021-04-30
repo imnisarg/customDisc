@@ -2,6 +2,11 @@
 
 # C:\Users\NISARG\Desktop\mech\Finance\Maverick\CODE\app.py: 3
 Flask == 1.1.2
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Werkzeug==0.15.5
 
 # C:\Users\NISARG\Desktop\mech\Finance\Maverick\CODE\predict.py: 6
 matplotlib == 3.0.3
