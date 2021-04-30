@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Customized Discounts</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Discounts</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="Volume_2019" placeholder="Volume_2019" required="required" /><br>
+    	<input type="text" name="Volume_2018" placeholder="Volume_2018" required="required" /><br>
+      <input type="text" name="segment" placeholder="segment" required="required" /><br>
+      <input type="text" name="sub_segment" placeholder="sub_segment" required="required" /><br>
+      <input type="text" name="sdfc_Tier" placeholder="sdfc_Tier" required="required" /><br>
+      <input type="text" name="poc_image" placeholder="poc_image" required="required" /><br>
+      <input type="text" name="Brand" placeholder="Brand" required="required" /><br>
+      <input type="text" name="Sub-Brand" placeholder="Sub-Brand" required="required" /><br>
+      <input type="text" name="Pack_Type" placeholder="Pack_Type" required="required" /><br>
+      <input type="text" name="Returnalility" placeholder="Returnalility" required="required" /><br>
+      <input type="text" name="province" placeholder="province" required="required" /><br>
+
+
+        <input type="text" name="GTO_2019" placeholder="GTO_2019" required="required" /><br>
+        <input type="text" name="Volume_2019 Product" placeholder="Volume_2019 Product" required="required" /><br>
+        <input type="text" name="Tax" placeholder="Tax" required="required" /><br>
+
+        
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ 
+
+</body>
+</html>
