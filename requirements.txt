@@ -46,7 +46,7 @@ pipenv==2020.11.15
 plotly==3.10.0
 pycparser==2.20
 pygame==1.9.4
-pyinstaller==4.0.dev0
+
 PyOpenGL==3.1.2
 pyparsing==2.4.7
 pyrsistent==0.15.2
