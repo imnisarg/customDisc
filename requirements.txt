@@ -10,4 +10,4 @@ scikit-learn>=0.18
 matplotlib>=1.4.3
 pandas>=0.19
 waterfallcharts == 3.8
-xlrd = 1.2.0
+xlrd == 1.2.0
