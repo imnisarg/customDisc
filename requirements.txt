@@ -45,7 +45,7 @@ Pillow==5.2.0
 pipenv==2020.11.15
 plotly==3.10.0
 pycparser==2.20
-pygame==1.9.4
+
 
 PyOpenGL==3.1.2
 pyparsing==2.4.7
