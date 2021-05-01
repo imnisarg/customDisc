@@ -129,7 +129,7 @@ class predictDiscounts:
         filename5 = 'midGTOModel_OnInvoiceDiscount.sav'
         midGTOModel_OnInvoiceDiscount = joblib.load(open(filename5, 'rb'))
 
-        filename6 = 'highGTOModel_OnInvoiceDiscount.sav'
+        filename6 = 'HighGTOModel_OnInvoiceDiscount.sav'
         highGTOModel_OnInvoiceDiscount = joblib.load(open(filename6, 'rb'))
 
         if(row['GTO_2019']<10000):
