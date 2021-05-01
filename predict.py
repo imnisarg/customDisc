@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 import numpy
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
@@ -115,22 +115,22 @@ class predictDiscounts:
         row = dict(row)
         print(row)
         filename1 = 'lowGTOModel_TotalDiscount.sav'
-        lowGTOModel_TotalDiscount = pickle.load(open(filename1, 'rb'))
+        lowGTOModel_TotalDiscount = joblib.load(open(filename1, 'rb'))
 
         filename2 = 'midGTOModel_TotalDiscount.sav'
-        midGTOModel_TotalDiscount = pickle.load(open(filename2, 'rb'))
+        midGTOModel_TotalDiscount = joblib.load(open(filename2, 'rb'))
 
         filename3 = 'highGTOModel_TotalDiscount.sav'
-        highGTOModel_TotalDiscount = pickle.load(open(filename3, 'rb'))
+        highGTOModel_TotalDiscount = joblib.load(open(filename3, 'rb'))
 
         filename4 = 'lowGTOModel_OnInvoiceDiscount.sav'
-        lowGTOModel_OnInvoiceDiscount = pickle.load(open(filename4, 'rb'))
+        lowGTOModel_OnInvoiceDiscount = joblib.load(open(filename4, 'rb'))
 
         filename5 = 'midGTOModel_OnInvoiceDiscount.sav'
-        midGTOModel_OnInvoiceDiscount = pickle.load(open(filename5, 'rb'))
+        midGTOModel_OnInvoiceDiscount = joblib.load(open(filename5, 'rb'))
 
         filename6 = 'highGTOModel_OnInvoiceDiscount.sav'
-        highGTOModel_OnInvoiceDiscount = pickle.load(open(filename6, 'rb'))
+        highGTOModel_OnInvoiceDiscount = joblib.load(open(filename6, 'rb'))
 
         if(row['GTO_2019']<10000):
             '''
