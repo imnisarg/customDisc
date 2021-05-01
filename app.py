@@ -4,6 +4,7 @@ from flask import Flask, render_template, url_for,request
 from predict import predictDiscounts
 import logging
 app = Flask(__name__)
+import sys
 import os
 @app.route('/')
 def home():
@@ -26,7 +27,7 @@ def predict():
     data['Product Set'] = data['Returnalility'] + '_' + data['Pack_Type'] + '_' + data['Brand'] + '_' + data['Sub-Brand']
     
 
-    trainData = pd.read_excel('data2.xlsx')
+    trainData = pd.read_csv('data3.csv')
     if os.path.exists("static/images/poc.png"):
         os.remove("static/images/poc.png")
     else:
@@ -38,6 +39,6 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug = True)
     app.logger.addHandler(logging.StreamHandler(sys.stdout))
     app.logger.setLevel(logging.ERROR)
