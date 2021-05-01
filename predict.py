@@ -113,7 +113,7 @@ class predictDiscounts:
         row = encodeObj.encode()
         row = row.iloc[0]
         row = dict(row)
-        
+        print(row)
         filename1 = 'lowGTOModel_TotalDiscount.sav'
         lowGTOModel_TotalDiscount = pickle.load(open(filename1, 'rb'))
 
