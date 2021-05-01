@@ -2,6 +2,7 @@
 import pandas as pd
 from flask import Flask, render_template, url_for,request
 from predict import predictDiscounts
+import logging
 app = Flask(__name__)
 import os
 @app.route('/')
@@ -38,3 +39,5 @@ def predict():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
+    app.logger.addHandler(logging.StreamHandler(sys.stdout))
+    app.logger.setLevel(logging.ERROR)
