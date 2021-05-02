@@ -86,7 +86,7 @@ class plotSaver:
 
     def savePlot(self):
         row = self.row_test
-        index = ['GTO_2019','Taxes Deducted','Operating Expenses' ,'Expected GTO' , 'Taxes' , 'Operating Expenses']
+        index = ['GTO_2019','Taxes Deducted','Operating Expenses' ,'Expected GTO' , 'Taxes' , 'Operating Expenses_2' , 'Net']
         values = list()
         values.append(row['GTO_2019'])
         values.append(-1*row['Tax'])
@@ -94,10 +94,9 @@ class plotSaver:
         values.append(row['Expected_GTO'])
         values.append(-1*(row['Tax'])*(row['Expected_GTO'] / row['GTO_2019']))
         values.append(-1*(1-row['ProfitMargin'])*(row['Expected_GTO']+values[-1]))
-
-        figure = waterfall_chart.plot(index,values , rotation_value = 45)
-        figure.title("Profit Estimation of Order")
-        figure.savefig(r'static\images\poc'+str(self.randNumber) + '.png')
+        values.append(sum(values))
+        
+        return index,values
 class predictDiscounts:
     def __init__(self,data,row_test):
         self.data = data
@@ -160,10 +159,10 @@ class predictDiscounts:
             print(predictedOffInvoiceDiscount)
             randNumber = random.randint(1,10000000)
             plotObj = plotSaver(row,randNumber)
-            plotObj.savePlot()
+            index , values = plotObj.savePlot()
 
 
-            return predictedDiscount , predictedOnInvoiceDiscount , predictedOffInvoiceDiscount , randNumber
+            return predictedDiscount , predictedOnInvoiceDiscount , predictedOffInvoiceDiscount , randNumber , index , values
 
         if((row['GTO_2019']>10000) and (row['GTO_2019']<50000)):
             '''
@@ -193,10 +192,10 @@ class predictDiscounts:
             print(predictedOffInvoiceDiscount)
             randNumber = random.randint(1,10000000)
             plotObj = plotSaver(row,randNumber)
-            plotObj.savePlot()
+            index , values = plotObj.savePlot()
 
 
-            return predictedDiscount , predictedOnInvoiceDiscount , predictedOffInvoiceDiscount , randNumber
+            return predictedDiscount , predictedOnInvoiceDiscount , predictedOffInvoiceDiscount , randNumber , index , values
         
         if(row['GTO_2019']>50000):
             '''
@@ -226,8 +225,8 @@ class predictDiscounts:
             print(predictedOffInvoiceDiscount)
             randNumber = random.randint(1,10000000)
             plotObj = plotSaver(row,randNumber)
-            plotObj.savePlot()
+            index , values = plotObj.savePlot()
 
 
-            return predictedDiscount , predictedOnInvoiceDiscount , predictedOffInvoiceDiscount , randNumber
+            return predictedDiscount , predictedOnInvoiceDiscount , predictedOffInvoiceDiscount , randNumber , index, values
 

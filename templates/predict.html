@@ -12,42 +12,141 @@
 </head>
 
 <body>
- <div class="login">
+ <div class="container" style="text-align:center">
 	<h1>Predict Discounts</h1>
 
      <!-- Form to enter new data for predictions  -->
-    <form action="{{ url_for('predict')}}"method="POST">
-      <input type="text" name="Volume_2019" placeholder="Volume_2019" required="required" /><br>
-    	<input type="text" name="Volume_2018" placeholder="Volume_2018" required="required" /><br>
-      <input type="text" name="segment" placeholder="segment" required="required" /><br>
-      <input type="text" name="sub_segment" placeholder="sub_segment" required="required" /><br>
-      <input type="text" name="sdfc_Tier" placeholder="sdfc_Tier" required="required" /><br>
-      <input type="text" name="poc_image" placeholder="poc_image" required="required" /><br>
-      <input type="text" name="Brand" placeholder="Brand" required="required" /><br>
-      <input type="text" name="Sub-Brand" placeholder="Sub-Brand" required="required" /><br>
-      <input type="text" name="Pack_Type" placeholder="Pack_Type" required="required" /><br>
-      <input type="text" name="Returnalility" placeholder="Returnalility" required="required" /><br>
-      <input type="text" name="province" placeholder="province" required="required" /><br>
+  
+    <form class = "form-horizontal" action="{{ url_for('predict')}}"method="POST">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Volume_2019">Volume_2019:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="Volume_2019" id= "Volume_2019" placeholder="Volume_2019" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Volume_2018">Volume_2018:</label>
+        <div class="col-sm-10">
+          <input type="text" name="Volume_2018" class="form-control" id= "Volume_2018" placeholder="Volume_2018" required="required" />
+        </div>
+      </div>
 
 
-        <input type="text" name="GTO_2019" placeholder="GTO_2019" required="required" /><br>
-        <input type="text" name="Volume_2019 Product" placeholder="Volume_2019 Product" required="required" /><br>
-        <input type="text" name="Tax" placeholder="Tax" required="required" /><br>
+    	<div class="form-group">
+        <label class="control-label col-sm-2" for="segment">segment:</label>
+        <div class="col-sm-10">
+          <input type="text" name="segment" class="form-control" id="segment" placeholder="segment" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="sub_segment">sub_segment:</label>
+        <div class="col-sm-10">
+          <input type="text" name="sub_segment" class="form-control" id="sub_segment" placeholder="sub_segment" required="required" />
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="sdfc_Tier">sdfc_Tier:</label>
+        <div class="col-sm-10">
+          <input type="text" name="sdfc_Tier" class="form-control" id="sdfc_Tier" placeholder="sdfc_Tier" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="poc_image">poc_image:</label>
+        <div class="col-sm-10">
+          <input type="text" name="poc_image" class="form-control" id="poc_image" placeholder="poc_image" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Brand">Brand:</label>
+        <div class="col-sm-10">
+          <input type="text" name="Brand" class="form-control" id="Brand" placeholder="Brand" required="required" />
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Sub-Brand">Sub-Brand:</label>
+        <div class="col-sm-10">
+          <input type="text" name="Sub-Brand" class="form-control" id="Sub-Brand" placeholder="Sub-Brand" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Pack_Type">Pack_Type:</label>
+        <div class="col-sm-10">
+          <input type="text" name="Pack_Type" class="form-control" id="Pack_Type" placeholder="Pack_Type" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Returnalility">Returnalility:</label>
+        <div class="col-sm-10">
+          <input type="text" name="Returnalility" class="form-control" id="Returnalility" placeholder="Returnalility" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="province">province:</label>
+        <div class="col-sm-10">
+          <input type="text" name="province" class="form-control" id="province" placeholder="province" required="required" />
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="GTO_2019">GTO_2019:</label>
+        <div class="col-sm-10">
+          <input type="text" name="GTO_2019" class="form-control" id="GTO_2019" placeholder="GTO_2019" required="required" />
+        </div>
+      </div>
+      
+
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Volume_2019 Product">Volume_2019 Product:</label>
+        <div class="col-sm-10">
+          <input type="text" name="Volume_2019 Product" class="form-control" id="Volume_2019 Product" placeholder="Volume_2019 Product" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Tax">Tax:</label>
+        <div class="col-sm-10">
+          <input type="text" name="Tax" class="form-control" id="Tax" placeholder="Tax" required="required" />
+        </div>
+      </div>  
+      
 
         
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
-
-   <br>
-   <br>
-  
+    
+   
    
  </div>
- {{pred1}}
- {{pred2}}
- {{pred3}}
- <img src={{path}} alt="POC PROFITABILITY PLOT">
+ 
+ 
+       
+ <div style="text-align:center">
+  <h1>{{pred1}}</h1>
+  <br>
+  <h1>{{pred2}}</h1>
+  <br>
+  <h1>{{pred3}}</h1>
+  <br>
+  <br>
+  <br>
+  <img src={{image}} alt="POC PROFITABILITY PLOT">
+  
+ 
+ </div>
 
 </body>
 </html>
