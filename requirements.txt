@@ -18,7 +18,7 @@ pandas>=0.25.3
 
 requests==2.22.0
 
-scikit-learn>=0.22.2.post1
+scikit-learn==0.22.2.post1
 
 
 sklearn==0.0
