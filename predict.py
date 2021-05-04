@@ -50,31 +50,31 @@ class encodeCategoricalVars:
         self.data = data
     def encode(self):
         lb_make = LabelEncoder()
-        lb_make.classes_ = numpy.load('classes_sdfc_tier.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_sdfc_tier.npy' , allow_pickle = True)
         print(lb_make.classes_)
         self.data['sdfc_Tier'] = lb_make.transform(self.data['sdfc_Tier'])
         
         for i in range(len(self.data['GTO_2019'])):
             if(self.data['poc_image'][i]==0):
                 self.data['poc_image'][i] = "Mainstream"
-        lb_make.classes_ = numpy.load('classes_poc_image.npy' , allow_pickle = True) 
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_poc_image.npy' , allow_pickle = True) 
         self.data['poc_image'] = lb_make.transform(self.data['poc_image'])
-        lb_make.classes_ = numpy.load('classes_segment.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_segment.npy' , allow_pickle = True)
         self.data['segment'] = lb_make.transform(self.data['segment'])
-        lb_make.classes_ = numpy.load('classes_sub_segment.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_sub_segment.npy' , allow_pickle = True)
         self.data['sub_segment'] = lb_make.transform(self.data['sub_segment'])
-        lb_make.classes_ = numpy.load('classes_Product Set.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_Product Set.npy' , allow_pickle = True)
         self.data['Product Set'] = lb_make.transform(self.data['Product Set'])
-        lb_make.classes_ = numpy.load('classes_Brand.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_Brand.npy' , allow_pickle = True)
         self.data['Brand'] = lb_make.transform(self.data['Brand'])
-        lb_make.classes_ = numpy.load('classes_Sub_Brand.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_Sub_Brand.npy' , allow_pickle = True)
         self.data['Sub-Brand'] = lb_make.transform(self.data['Sub-Brand'])
-        lb_make.classes_ = numpy.load('classes_Pack_Type.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_Pack_Type.npy' , allow_pickle = True)
         print(lb_make.classes_)
         self.data['Pack_Type'] = lb_make.transform(self.data['Pack_Type'])
-        lb_make.classes_ = numpy.load('classes_Returnalility.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_Returnalility.npy' , allow_pickle = True)
         self.data['Returnalility'] = lb_make.transform(self.data['Returnalility'])
-        lb_make.classes_ = numpy.load('classes_province.npy' , allow_pickle = True)
+        lb_make.classes_ = numpy.load('trainedCategoricalEncoders/classes_province.npy' , allow_pickle = True)
         print(lb_make.classes_)
         self.data['province'] = lb_make.transform(self.data['province'])
         
@@ -113,22 +113,22 @@ class predictDiscounts:
         row = row.iloc[0]
         row = dict(row)
         print(row)
-        filename1 = 'lowGTOModel_TotalDiscount.sav'
+        filename1 = 'trainedMLModels/lowGTOModel_TotalDiscount.sav'
         lowGTOModel_TotalDiscount = joblib.load(open(filename1, 'rb'))
 
-        filename2 = 'midGTOModel_TotalDiscount.sav'
+        filename2 = 'trainedMLModels/midGTOModel_TotalDiscount.sav'
         midGTOModel_TotalDiscount = joblib.load(open(filename2, 'rb'))
 
-        filename3 = 'highGTOModel_TotalDiscount.sav'
+        filename3 = 'trainedMLModels/highGTOModel_TotalDiscount.sav'
         highGTOModel_TotalDiscount = joblib.load(open(filename3, 'rb'))
 
-        filename4 = 'lowGTOModel_OnInvoiceDiscount.sav'
+        filename4 = 'trainedMLModels/lowGTOModel_OnInvoiceDiscount.sav'
         lowGTOModel_OnInvoiceDiscount = joblib.load(open(filename4, 'rb'))
 
-        filename5 = 'midGTOModel_OnInvoiceDiscount.sav'
+        filename5 = 'trainedMLModels/midGTOModel_OnInvoiceDiscount.sav'
         midGTOModel_OnInvoiceDiscount = joblib.load(open(filename5, 'rb'))
 
-        filename6 = 'HighGTOModel_OnInvoiceDiscount.sav'
+        filename6 = 'trainedMLModels/HighGTOModel_OnInvoiceDiscount.sav'
         highGTOModel_OnInvoiceDiscount = joblib.load(open(filename6, 'rb'))
 
         if(row['GTO_2019']<10000):

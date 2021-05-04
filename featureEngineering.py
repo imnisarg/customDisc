@@ -72,4 +72,4 @@ class featureEngineering_TrainTest:
 df = pd.read_excel("data.xlsx")
 obj = featureEngineering_TrainTest(df)
 newData = obj.featureEngineering()
-newData.to_excel("data2.xlsx",index = False)
+newData.to_csv("data3.csv",index = False)
